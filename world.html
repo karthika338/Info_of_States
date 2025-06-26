@@ -1,0 +1,57 @@
+World.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive World Map</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click the World Map</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" 
+         alt="World Map" 
+         id="worldMap">
+
+    <script>
+        document.getElementById('worldMap').addEventListener('click', function() {
+            // Open new window with the list of countries
+            const countriesWindow = window.open("", "CountriesList", "width=400,height=600");
+            countriesWindow.document.write(`
+                <html>
+                    <head><title>List of Countries</title></head>
+                    <body style="font-family: Arial, sans-serif;">
+                        <h2>List of Countries</h2>
+                        <ul>
+                           <li>United States</li>
+                            <li>Canada</li>
+                            <li>Brazil</li>
+                            <li>United Kingdom</li>
+                            <li>Germany</li>
+                            <li>France</li>
+                            <li>India</li>
+                            <li>China</li>
+                            <li>Japan</li>
+                            <li>Australia</li>
+                            <li>South Africa</li>
+                            <!-- Add more countries as needed -->
+                        </ul>
+                    </body>
+                </html>
+            `);
+        });
+    </script>
+
+</body>
+</html>
